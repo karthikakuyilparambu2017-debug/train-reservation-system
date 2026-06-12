@@ -340,6 +340,18 @@ nav a:hover{
 .booking-card button:active{
     transform: scale(0.98);
 }
+.backbtn{
+    margin-top: 10px;
+    padding: 14px;
+    background:#dc2626;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
 
 @media(max-width:768px){
     .booking-card{
@@ -404,6 +416,21 @@ nav a:hover{
     font-size: 18px;
     margin: 0;
 }
+.search{ 
+   display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin: 30px 0;
+    flex-wrap: wrap;
+     width: 250px;
+    padding: 12px 15px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    font-size: 16px;
+    outline: none;
+    transition: 0.3s;
+ } 
 
 .deletebtn{
     background: #dc2626;

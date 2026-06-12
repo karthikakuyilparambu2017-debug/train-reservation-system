@@ -1,8 +1,13 @@
 import { useState } from "react";
 import TrainCard from "../componenets/TrainCard";
+import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+
 function Train(){
     const [fromSearch,setFromsearch]=useState("");
     const [toSearch,setTosearch]=useState("");
+    const [back,setBack]=useState("");
+    const navigate=useNavigate();
     const trains=[
          {
     id: 1,
@@ -43,6 +48,7 @@ function Train(){
     );
     setFilteredTrain(result);
     };
+    navigate("/trains");
     
     return(
         <div className="traintime">
@@ -53,13 +59,14 @@ function Train(){
              value={fromSearch} 
              onChange={(e)=>setFromsearch(e.target.value)}/>
 
-             <input type="text" 
+             <input  type="text" 
             placeholder="To"
              value={toSearch} 
              onChange={(e)=>setTosearch(e.target.value)}/>
              <button  className="search-btn"onClick={handleSearch}>
                         Search Train
                       </button>
+              
             </div>
             <div className="traincontent">
                 {filteredTrain.length===0?(<p> No trains found for this route</p>):(
@@ -68,6 +75,7 @@ function Train(){
                    train={train}/>
                 )))}
                 </div>
+                <Link to="/"><button className="backbtn">Back</button></Link>  {" "}
         </div>
     );
 }
